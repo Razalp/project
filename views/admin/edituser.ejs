@@ -1,0 +1,59 @@
+<%-include('../header')-%>
+<style>
+    body{ 
+        background-image: url('/assets/admin.gif');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center center;
+        background-clip: content-box;
+}
+</style>
+<a href="/admin">
+    <button class="btn btn-danger mm ccc">Back to admin page</button>
+</a>
+<div class="text-center center-div" id="login">
+    <div class="container w-25 border  py-5 "id="ccc">
+        <div class="title pb-5">
+            <h2 class="font-weight-bold crr">USER - EDIT<br>SYSTEM </h2>
+        </div>
+
+        <% if(user){%>
+       
+        <form action="/admin/edituser" method="post" class="pt-3">
+            
+            <div class="form-group">
+                <input type="text" class="from-control bg-transparent crrr" required placeholder="name" value="<%=user.name%>" readonly name="name">
+                <br>
+                <br>
+                <input type="email" class="from-control bg-transparent crrr" required placeholder="email" value="<%=user.email%>" name="email">
+                <br>
+                <br>
+                <input type="tel" class="from-control bg-transparent crrr" required placeholder="mobile" value="<%=user.mobile%>" name="mobile">
+                <br>
+                <br>
+                
+                    <!-- <div>
+                        <input type="radio" class="" id="role_false" required name="is_admin" value="<%=user.is_admin%>" <% if (user.is_admin === "false") { %> checked <% } %>>
+                        <label for="role_false">
+                        false
+                                        </label>
+                        <input type="radio" class="" id="role_true" required name="is_admin" value="<%=user.is_admin%>" <% if (user.is_admin === "true") { %> checked <% } %>>
+                        <label for="role_true">
+                        true
+                                        </label>
+                    </div> -->
+                
+                <!-- <small class="'from-text crr ">REGISTER EMAIL ADDRESS</small> -->
+           <br>
+           <br>
+            <button type="submit" class="btn  btn-outline-secondary crr " onclick=" return confirm('Are You Sure')">UPDATE</button>
+        </form>
+        <%}%>
+    </div>
+</div>
+
+
+<%-include('../footer')-%>
+
+

@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap');
+
+body{
+    background-color:#000000;
+    background-image: url('/assets/robo.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-clip: content-box;
+}
+.center-div{
+    padding-top: 5%;
+}
+.btn.btn-outline-info{
+padding: .4em 2em;
+}
+form{
+    padding: 0 3em;
+}
+#login.title>span{
+    font-size: .8em;
+}
+
+.crr{
+     color: #fffafa;
+     border-radius: 30px;
+ 
+}
+#ccc{
+    background-color:rgba(0,0,0,0.2);
+    border-radius: 50px;
+}
+#cccc{
+    background-color:rgba(37, 37, 37, 0.2);
+    border-radius: 50px;
+    color: #ffffff;
+}
+.sign{
+    position: relative;
+    top: 19px;
+}
+.button1{
+    color: rgb(255, 255, 255);
+    border-radius: 50px;
+    
+}
+.mm{
+    position: relative;
+    top: 51px;
+    left: 43px
+}

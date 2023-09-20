@@ -1,0 +1,66 @@
+<%-include('../header')-%>
+<style>
+    *{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+#hello{
+    margin-top: 20px;
+    color: aliceblue;
+}
+    .ro1{
+        height: 30px;
+        width: 30px;
+        
+    }
+    .pho img{
+    width: 290px;
+    
+    position: relative;
+    left: 51px; 
+
+
+}
+.ff{
+    position: relative;
+    margin-bottom: 70px;
+}
+.row img:hover{
+    transform: scale(1.05);
+    transition: 0.4s ease-in-out;
+    
+}
+
+</style>
+
+<div class="text-center center-div mt-5" id="'login">
+    <div class="container w-25 border py-5 mt-5" id="cccc">
+        <h3 id="crrrr">WELCOME ...........!</h3>
+        <h5><%= locals.user ? user : "User" %></h5>
+        <a href="/logout"><button class="btn btn-outline-secondary crr">LOGOUT</button></a>
+    </div>
+    <h2 id="hello">CHOOSE YOUR FAVOURITE TV SHOW </h2>
+    </div>
+    <div>
+        <div class="row  col-12 d-flex ff">
+            <div class="col-3 pho mx-5 "><img src="assets/22.jpg" alt=""></div>
+            <div class="col-3 pho mx-5 "><img src="assets/24.jpg" alt=""></div>
+            <div class="col-3 pho mx-5 "><img src="assets/10.jpg" alt=""></div>
+         
+        </div>
+        <div class="row  col-12 d-flex ff">
+            <div class="col-3 pho mx-5 "><img src="assets/13.jpg" alt=""></div>
+            <div class="col-3 pho mx-5 "><img src="assets/7.jpg" alt=""></div>
+            <div class="col-3 pho  mx-5"><img src="assets/21.jpg" alt=""></div>
+        </div>
+        <div class="row  col-12 d-flex ff">
+            <div class="col-3 pho  mx-5"><img src="assets/12.jpg" alt=""></div>
+            <div class="col-3 pho mx-5 "><img src="assets/28.jpg" alt=""></div>
+            <div class="col-3 pho  mx-5"><img src="assets/6.jpg" alt=""></div>
+        </div>
+
+    </div>
+    
+
+<%-include('../footer')-%>    

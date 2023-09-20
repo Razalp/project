@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+</head>
+<body>
+  <style>
+      .buttones{
+        display: flex;
+      }
+      .ii{
+        position: relative;
+        margin-left: 15px;
+        left: 700px;
+      }
+      .iii{
+        position: relative;
+        left: 300px;
+      }
+  </style>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="iii">
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" id="searchInput" placeholder="Search user" aria-label="Search">
+              <button class="btn btn-outline-danger"  type="submit"><i class="bx bx-reset"></i></button>
+            </form> 
+          </div>
+            <div class="buttones">
+            <form action="/admin/logout" method="get">
+              <button class="btn btn-outline-secondary crr ii"><i class="bx bx-log-out"> LOG OUT</i></button>
+            </form>
+            <a href="/admin/adminCreate"><button class="btn btn-primary ii">Create admin</button></a>
+          </div>
+          </div>
+        </div>
+      </nav>
+      <div class="container-fluid">
+        <br>
+        <table  class="table table-success table-striped">
+          <thead>
+            <tr>
+              <th scope="col">NO</th>
+              <th scope="col">NAME</th>
+              <th scope="col">EMAIL</th>
+              <th scope="col">NUMBER</th>
+              <th scope="col">ROLES</th>
+              <th scope="col">ACTION</th>
+            </tr>
+          </thead>
+          <tbody>
+            <%console.log(user.name)%>
+            <% if(user){%>
+              <%user.forEach((person,index)=>{%>
+                <tr>
+
+              
+              <td><%= index+1 %></td>
+              <td class="user"><%=person.name%></td>
+              <td><%=person.email%></td>
+              <td><%=person.mobile%></td>
+              <td><%=person.is_admin%></td>
+              <td>
+                <a class="text-warning" href="edit/<%=person._id%>"><button class="btn btn-warning"><i class="bx bx-edit-alt "></i></button></a>
+              <a href="/admin/deleteuser/<%=person._id%>" onclick=" return confirm('Are You Sure')"><button class="btn btn-danger"><i class="bx bx-trash-alt "></i></button></a></td>
+            </tr>
+              <% })%>
+              <%}%>
+            
+          </tbody>
+        </table>
+      </div>
+      <script>
+    const search = document.querySelector('#searchInput');
+  const rows = document.querySelectorAll('tbody tr');
+
+  search.addEventListener('keyup', (e) => {//action inbuild 
+    if (e.target.value.trim() !== '') {//trim white space full remove value target inbild
+      for (let i = 0; i < rows.length; i++) {
+        const user = rows[i].querySelector('.user').textContent.toLowerCase();
+
+        if (user.includes(search.value.toLowerCase())) {
+          rows[i].style.display = '';
+        } else {
+          rows[i].style.display = 'none';
+        }
+      }
+    } else {
+      for (let i = 0; i < rows.length; i++) {
+        rows[i].style.display = '';
+      }
+    }
+  });
+    </script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>

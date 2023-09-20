@@ -1,0 +1,46 @@
+<%-include('../header')-%>
+<a href="/admin">
+    <button class="btn btn-danger mm ccc">GO TO ADMIN</button>
+</a>
+<div class="text-center center-div" id="'login">
+    <div class="container w-25 border  py-5 "id="ccc">
+        <div class="title pb-5">
+            <h2 class="font-weight-bold crr">LOGIN SYSTEM</h2>
+            <span class="crr">LOGIN FOR THE EXISTING USER</span>
+            <%if(locals.logout){ %>
+                <div class="alert alert-success text-center">
+                    <%=logout%>
+                </div>
+                <%}%>
+                
+            <%if(errmsg){ %>
+                
+                <div class="alert alert-warning text-center">
+                    <%=errmsg%>
+                </div>
+                <%}%>
+        </div>
+        <form action="/login" method="post" class="pt-3">
+            <div class="form-group">
+                <input type="email" class="from-control bg-transparent crrr" placeholder="email" name="email">
+                <br>
+                <br>
+               
+                <!-- <small class="'from-text crr ">REGISTER EMAIL ADDRESS</small> -->
+            </div>
+           
+                <div class="form-group" >
+                    <input type="password" class="from-control crrr bg-transparent" name="password" placeholder="password">
+                </div>
+                <br>
+            <button type="submit" class="btn  btn-danger crr ">SUBMIT</button>
+        </form>
+        <div class="sign">
+            
+                <h6 style="color: white;">create account <a href="/signup"><button class="btn btn-danger button1 " class="button1">signup</button></a></h6>
+         </div>
+    </div>
+
+</div>
+
+<%-include('../footer')-%>

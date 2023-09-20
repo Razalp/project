@@ -1,0 +1,44 @@
+<%-include('../header')-%>
+<style>
+    body{
+        background-image: url('/assets/admin.gif');
+    }
+</style>
+<a href="/admin">
+    <button class="btn btn-danger mm ccc">Back to admin page</button>
+</a>
+<div class="text-center center-div" id="'login">
+    <div class="container w-25 border  py-5 "id="ccc">
+        <div class="title pb-5">
+            <h2 class="font-weight-bold crr">create admin <br>SYSTEM </h2>
+            <span class="crr">CREATE A NEW ACCOUNT</span>
+        </div>
+       
+        
+      
+        <form action="/admin/adminCreate" method="post" class="pt-3">
+            
+            <div class="form-group">
+                <input type="text" class="from-control bg-transparent crrr" required placeholder="name" name="name">
+                <br>
+                <br>
+                <input type="email" class="from-control bg-transparent crrr" required placeholder="email" name="email">
+                <br>
+                <br>
+                <input type="tel" class="from-control bg-transparent crrr" required placeholder="mobile" name="mobile">
+                <br>
+                <br>
+               
+                <!-- <small class="'from-text crr ">REGISTER EMAIL ADDRESS</small> -->
+                
+                    <input type="password" class="from-control crrr bg-transparent" name="password" placeholder="password">
+            
+           <br>
+           <br>
+            <button type="submit" class="btn  btn-outline-secondary crr">SUBMIT</button>
+        </form>
+    </div>
+</div>
+
+
+<%-include('../footer')-%>
